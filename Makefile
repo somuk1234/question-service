@@ -3,7 +3,7 @@
 .ONESHELL: ;             # recipes execute in same shell
 .EXPORT_ALL_VARIABLES: ; # send all vars to shell
 
-BINARY_NAME='user-service'
+BINARY_NAME='question-service'
 
 build: build-go-server
 
