@@ -17,6 +17,7 @@ func registerRoutes(router *gin.Engine) *gin.RouterGroup {
 	v1 := router.Group("/api/v1/")
 	{
 		HealthCheck(v1)
+		
 		//TODO: add other routes
 	}
 	return v1
