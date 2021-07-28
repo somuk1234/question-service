@@ -3,6 +3,7 @@ package server
 import (
 	"context"
 	"log"
+	managers "questions-keeper-service/internal/manager"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/fx"
@@ -14,6 +15,8 @@ func Start(ctx context.Context) {
 	app := fx.New(
 		fx.Provide(NewHttpRouter),
 		fx.Invoke(registerHooks),
+		fx.Provide(managers.NewPostgresSQL),
+		fx.Invoke(managers.SetPostgreSQL),
 		fx.Invoke(registerRoutes),
 	)
 	app.Run()
