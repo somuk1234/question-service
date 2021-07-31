@@ -23,7 +23,6 @@ func registerRoutes(router *gin.Engine) *gin.RouterGroup {
 		question.ChangeStatusOfQuestion(v1)
 		question.GetToDoQuestions(v1)
 		question.RemoveQuestion(v1)
-		question.UpdateQuestion(v1)
 	}
 	return v1
 }
